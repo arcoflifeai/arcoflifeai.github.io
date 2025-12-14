@@ -16,7 +16,6 @@
       background: radial-gradient(circle at top, #0b1c2d, #05070c);
       color: #ffffff;
     }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -24,19 +23,16 @@
       padding: 18px 28px;
       flex-wrap: wrap;
     }
-
     .logo {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 600;
     }
-
     .logo img {
       width: 34px;
       height: 34px;
     }
-
     .lang-toggle button {
       background: none;
       border: none;
@@ -45,26 +41,21 @@
       cursor: pointer;
       font-weight: 600;
     }
-
     .lang-toggle .active {
       color: #4fc3ff;
     }
-
     .hero {
       text-align: center;
       padding: 90px 16px 70px;
     }
-
     .hero h1 {
       font-size: 40px;
       margin-bottom: 14px;
     }
-
     .subtitle {
       color: #b0c7dd;
       font-size: 18px;
     }
-
     .buttons {
       margin-top: 32px;
       display: flex;
@@ -72,7 +63,6 @@
       gap: 14px;
       flex-wrap: wrap;
     }
-
     .btn {
       padding: 14px 26px;
       border-radius: 30px;
@@ -82,84 +72,23 @@
       align-items: center;
       gap: 8px;
     }
-
     .btn.primary {
       background: #4fc3ff;
       color: #000;
     }
-
     .btn.secondary {
       border: 1px solid #4fc3ff;
       color: #4fc3ff;
     }
-
     section {
       padding: 70px 16px;
       max-width: 1100px;
       margin: auto;
     }
-
     h2 {
       text-align: center;
       margin-bottom: 36px;
     }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      padding: 26px;
-      border-radius: 18px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(79,195,255,0.15);
-    }
-
-    .news-box {
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .payments {
-      text-align: center;
-    }
-
-    .pay-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .wallet {
-      background: #0f1f33;
-      padding: 16px;
-      border-radius: 12px;
-      word-break: break-all;
-      font-size: 14px;
-    }
-
-    .copy-btn {
-      margin-top: 8px;
-      background: #4fc3ff;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
     .contact form {
       max-width: 420px;
       margin: auto;
@@ -167,7 +96,6 @@
       flex-direction: column;
       gap: 14px;
     }
-
     .contact input,
     .contact textarea {
       padding: 12px;
@@ -176,21 +104,11 @@
       background: #0f1f33;
       color: #fff;
     }
-
     footer {
       text-align: center;
       padding: 36px 16px;
       color: #8aa4c0;
       font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 30px;
-      }
-      .subtitle {
-        font-size: 16px;
-      }
     }
   </style>
 </head>
@@ -202,129 +120,68 @@
     <img src="logo.png" alt="ArcOfLife AI Logo">
     <span>ArcOfLife AI</span>
   </div>
-
-  <div class="lang-toggle">
-    <button id="enBtn" class="active">EN</button>
-    <button id="hrBtn">HR</button>
-  </div>
 </header>
 
 <main>
 
 <section class="hero">
-  <h1 data-en>Automation. Trading Systems. Smart Infrastructure.</h1>
-  <h1 data-hr style="display:none;">Automatizacija. Trgovinski sustavi. Pametna infrastruktura.</h1>
-
-  <p class="subtitle" data-en>No hype. Only real automation.</p>
-  <p class="subtitle" data-hr style="display:none;">Bez hypea. Samo stvarna automatizacija.</p>
-
-  <div class="buttons">
-    <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">Join Telegram</a>
-    <a href="#contact" class="btn secondary">Contact</a>
-  </div>
-</section>
-
-<section class="services">
-  <h2 data-en>Current Services</h2>
-  <h2 data-hr style="display:none;">Trenutne usluge</h2>
-
-  <div class="cards">
-    <div class="card">
-      <h3>MT4 Consulting</h3>
-      <p>Strategy logic, risk management and EA architecture review.</p>
-    </div>
-
-    <div class="card">
-      <h3>Telegram Bots</h3>
-      <p>Custom Telegram bots for signals, automation and reporting.</p>
-    </div>
-
-    <div class="card">
-      <h3>Coming Soon</h3>
-      <p>Advanced automation systems & private infrastructure.</p>
-    </div>
-  </div>
-</section>
-
-<section class="news">
-  <h2>News & Updates</h2>
-  <div class="news-box">
-    <script async src="https://telegram.org/js/telegram-widget.js?22"
-      data-telegram-post="ArcOfLifeAI/1"
-      data-width="100%">
-    </script>
-  </div>
-</section>
-
-<section class="payments">
-  <h2>Payment Methods</h2>
-
-  <div class="pay-icons">
-    <strong>Crypto (ETH / USDT)</strong>
-    <strong>PayPal</strong>
-  </div>
-
-  <div class="wallet">
-    <strong>MetaMask (ETH / USDT):</strong><br>
-    0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E<br>
-    <button class="copy-btn" onclick="copyWallet()">Copy</button>
-  </div>
-
-  <div class="wallet" style="margin-top:16px;">
-    <strong>PayPal:</strong><br>
-    billing@arcoflifeai.com
-  </div>
+  <h1>Automation. Trading Systems. Smart Infrastructure.</h1>
+  <p class="subtitle">No hype. Only real automation.</p>
 </section>
 
 <section class="contact" id="contact">
   <h2>Contact</h2>
-  <form>
-    <input type="text" placeholder="Your name">
-    <input type="email" placeholder="Your email">
-    <textarea rows="4" placeholder="Message"></textarea>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your name" required>
+    <input type="email" id="email" placeholder="Your email" required>
+    <textarea id="message" rows="4" placeholder="Message" required></textarea>
     <button type="submit">Send</button>
   </form>
-</section>
-
-<section class="disclaimer">
-  <h2>Disclaimer</h2>
-  <p>
-    All services provided are technical and educational. Automation tools assist execution,
-    while final responsibility remains with the user.
-  </p>
 </section>
 
 </main>
 
 <footer>
   © 2025 ArcOfLife AI<br>
-  info@arcoflifeai.com · support@arcoflifeai.com · matija.farkas@arcoflifeai.com
+  info@arcoflifeai.com
 </footer>
 
 <script>
-  function copyWallet() {
-    navigator.clipboard.writeText("0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E");
-    alert("Wallet address copied");
-  }
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  const enBtn = document.getElementById("enBtn");
-  const hrBtn = document.getElementById("hrBtn");
-  const enEls = document.querySelectorAll("[data-en]");
-  const hrEls = document.querySelectorAll("[data-hr]");
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
 
-  enBtn.onclick = () => {
-    enBtn.classList.add("active");
-    hrBtn.classList.remove("active");
-    enEls.forEach(e => e.style.display = "");
-    hrEls.forEach(e => e.style.display = "none");
-  };
+  const text =
+`📩 New message from ArcOfLifeAI.com
 
-  hrBtn.onclick = () => {
-    hrBtn.classList.add("active");
-    enBtn.classList.remove("active");
-    hrEls.forEach(e => e.style.display = "");
-    enEls.forEach(e => e.style.display = "none");
-  };
+👤 Name: ${name}
+📧 Email: ${email}
+
+📝 Message:
+${message}`;
+
+  fetch("https://api.telegram.org/bot8145919840:AAFH07gd_DpIixmKWuhdi_CDziaJJKFmlBQ/sendMessage", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: "7437099025",
+      text: text
+    })
+  })
+  .then(r => {
+    if (r.ok) {
+      alert("Message sent.");
+      document.getElementById("contactForm").reset();
+    } else {
+      alert("Telegram error.");
+    }
+  })
+  .catch(() => alert("Network error."));
+});
 </script>
 
 </body>
