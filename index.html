@@ -21,7 +21,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 32px;
+      padding: 18px 28px;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -32,8 +33,8 @@
     }
 
     .logo img {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
     }
 
     .lang-toggle button {
@@ -51,12 +52,12 @@
 
     .hero {
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 90px 16px 70px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
+      font-size: 40px;
+      margin-bottom: 14px;
     }
 
     .subtitle {
@@ -68,7 +69,7 @@
       margin-top: 32px;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
@@ -93,18 +94,14 @@
     }
 
     section {
-      padding: 80px 20px;
+      padding: 70px 16px;
       max-width: 1100px;
       margin: auto;
     }
 
-    .services h2,
-    .news h2,
-    .payments h2,
-    .contact h2,
-    .disclaimer h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .cards {
@@ -115,7 +112,7 @@
 
     .card {
       background: rgba(255,255,255,0.05);
-      padding: 28px;
+      padding: 26px;
       border-radius: 18px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -127,7 +124,7 @@
 
     .news-box {
       background: rgba(255,255,255,0.05);
-      padding: 24px;
+      padding: 20px;
       border-radius: 16px;
       text-align: center;
     }
@@ -136,12 +133,31 @@
       text-align: center;
     }
 
-    .payments .icons {
+    .pay-icons {
       display: flex;
       justify-content: center;
-      gap: 24px;
-      margin-top: 20px;
       align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .wallet {
+      background: #0f1f33;
+      padding: 16px;
+      border-radius: 12px;
+      word-break: break-all;
+      font-size: 14px;
+    }
+
+    .copy-btn {
+      margin-top: 8px;
+      background: #4fc3ff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
     }
 
     .contact form {
@@ -161,20 +177,20 @@
       color: #fff;
     }
 
-    .contact button {
-      background: #4fc3ff;
-      border: none;
-      padding: 14px;
-      border-radius: 30px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 36px 16px;
       color: #8aa4c0;
       font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      .subtitle {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
@@ -195,80 +211,88 @@
 
 <main>
 
-  <section class="hero">
-    <h1 data-en>Automation. Trading Systems. Smart Infrastructure.</h1>
-    <h1 data-hr style="display:none;">Automatizacija. Trgovinski sustavi. Pametna infrastruktura.</h1>
+<section class="hero">
+  <h1 data-en>Automation. Trading Systems. Smart Infrastructure.</h1>
+  <h1 data-hr style="display:none;">Automatizacija. Trgovinski sustavi. Pametna infrastruktura.</h1>
 
-    <p class="subtitle" data-en>No hype. Only real automation.</p>
-    <p class="subtitle" data-hr style="display:none;">Bez hypea. Samo stvarna automatizacija.</p>
+  <p class="subtitle" data-en>No hype. Only real automation.</p>
+  <p class="subtitle" data-hr style="display:none;">Bez hypea. Samo stvarna automatizacija.</p>
 
-    <div class="buttons">
-      <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">
-        Join Telegram
-      </a>
-      <a href="#contact" class="btn secondary">Contact</a>
+  <div class="buttons">
+    <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">Join Telegram</a>
+    <a href="#contact" class="btn secondary">Contact</a>
+  </div>
+</section>
+
+<section class="services">
+  <h2 data-en>Current Services</h2>
+  <h2 data-hr style="display:none;">Trenutne usluge</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>MT4 Consulting</h3>
+      <p>Strategy logic, risk management and EA architecture review.</p>
     </div>
-  </section>
 
-  <section class="services">
-    <h2 data-en>Current Services</h2>
-    <h2 data-hr style="display:none;">Trenutne usluge</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3 data-en>MT4 Consulting</h3>
-        <h3 data-hr style="display:none;">MT4 Savjetovanje</h3>
-        <p data-en>Strategy logic, risk management and EA architecture review.</p>
-        <p data-hr style="display:none;">Logika strategija, upravljanje rizikom i analiza EA strukture.</p>
-      </div>
-
-      <div class="card">
-        <h3 data-en>Telegram Bots</h3>
-        <h3 data-hr style="display:none;">Telegram Botovi</h3>
-        <p data-en>Custom Telegram bots for signals, automation and reporting.</p>
-        <p data-hr style="display:none;">Custom Telegram botovi za signale, automatizaciju i izvještaje.</p>
-      </div>
-
-      <div class="card">
-        <h3>Coming Soon</h3>
-        <p>Advanced automation systems & private infrastructure.</p>
-      </div>
+    <div class="card">
+      <h3>Telegram Bots</h3>
+      <p>Custom Telegram bots for signals, automation and reporting.</p>
     </div>
-  </section>
 
-  <section class="news">
-    <h2 data-en>News & Updates</h2>
-    <h2 data-hr style="display:none;">Novosti</h2>
-
-    <div class="news-box">
-      🚧 Platform launched. More automation modules coming soon.
+    <div class="card">
+      <h3>Coming Soon</h3>
+      <p>Advanced automation systems & private infrastructure.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="payments">
-    <h2>Crypto Payments</h2>
-    <div class="icons">
-      <strong>ETH / USDT</strong>
-    </div>
-  </section>
+<section class="news">
+  <h2>News & Updates</h2>
+  <div class="news-box">
+    <script async src="https://telegram.org/js/telegram-widget.js?22"
+      data-telegram-post="ArcOfLifeAI/1"
+      data-width="100%">
+    </script>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Your name">
-      <input type="email" placeholder="Your email">
-      <textarea rows="4" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+<section class="payments">
+  <h2>Payment Methods</h2>
 
-  <section class="disclaimer">
-    <h2>Disclaimer</h2>
-    <p>
-      All services provided are educational and technical in nature. Trading involves risk.
-      Automation tools assist execution but decision-making responsibility remains with the user.
-    </p>
-  </section>
+  <div class="pay-icons">
+    <strong>Crypto (ETH / USDT)</strong>
+    <strong>PayPal</strong>
+  </div>
+
+  <div class="wallet">
+    <strong>MetaMask (ETH / USDT):</strong><br>
+    0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E<br>
+    <button class="copy-btn" onclick="copyWallet()">Copy</button>
+  </div>
+
+  <div class="wallet" style="margin-top:16px;">
+    <strong>PayPal:</strong><br>
+    billing@arcoflifeai.com
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Your name">
+    <input type="email" placeholder="Your email">
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<section class="disclaimer">
+  <h2>Disclaimer</h2>
+  <p>
+    All services provided are technical and educational. Automation tools assist execution,
+    while final responsibility remains with the user.
+  </p>
+</section>
 
 </main>
 
@@ -278,24 +302,28 @@
 </footer>
 
 <script>
+  function copyWallet() {
+    navigator.clipboard.writeText("0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E");
+    alert("Wallet address copied");
+  }
+
   const enBtn = document.getElementById("enBtn");
   const hrBtn = document.getElementById("hrBtn");
-
-  const enElements = document.querySelectorAll("[data-en]");
-  const hrElements = document.querySelectorAll("[data-hr]");
+  const enEls = document.querySelectorAll("[data-en]");
+  const hrEls = document.querySelectorAll("[data-hr]");
 
   enBtn.onclick = () => {
     enBtn.classList.add("active");
     hrBtn.classList.remove("active");
-    enElements.forEach(e => e.style.display = "");
-    hrElements.forEach(e => e.style.display = "none");
+    enEls.forEach(e => e.style.display = "");
+    hrEls.forEach(e => e.style.display = "none");
   };
 
   hrBtn.onclick = () => {
     hrBtn.classList.add("active");
     enBtn.classList.remove("active");
-    hrElements.forEach(e => e.style.display = "");
-    enElements.forEach(e => e.style.display = "none");
+    hrEls.forEach(e => e.style.display = "");
+    enEls.forEach(e => e.style.display = "none");
   };
 </script>
 
