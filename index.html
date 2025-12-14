@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ArcOfLife AI</title>
 
   <meta name="description" content="ArcOfLife AI – Automation, Trading Systems & Telegram Bots. No hype. Only real automation." />
@@ -10,7 +11,6 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* fallback ako se CSS ne učita */
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -54,17 +54,15 @@
     </p>
 
     <div class="buttons">
-      <a
-        href="https://t.me/+2FVym2a8Zpg5YTY0"
-        target="_blank"
-        class="btn primary"
-      >
+      <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">
+        <!-- TELEGRAM SVG -->
+        <svg width="18" height="18" viewBox="0 0 240 240" fill="currentColor">
+          <path d="M120 0C53.7 0 0 53.7 0 120s53.7 120 120 120 120-53.7 120-120S186.3 0 120 0zm58.7 82.4-20.6 97.1c-1.6 6.9-5.8 8.6-11.7 5.4l-32.3-23.8-15.6 15c-1.7 1.7-3.1 3.1-6.4 3.1l2.3-33 60.1-54.3c2.6-2.3-.6-3.6-4.1-1.3l-74.3 46.8-32-10c-6.9-2.2-7-6.9 1.4-10.2l125-48.2c5.8-2.2 10.9 1.3 9.2 10.4z"/>
+        </svg>
         Join Telegram
       </a>
 
-      <a href="#contact" class="btn secondary">
-        Contact
-      </a>
+      <a href="#contact" class="btn secondary">Contact</a>
     </div>
   </section>
 
@@ -117,6 +115,21 @@
     </div>
   </section>
 
+  <!-- NEWS / UPDATES -->
+  <section class="news">
+    <h2 data-en>News & Updates</h2>
+    <h2 data-hr style="display:none;">Novosti</h2>
+
+    <div class="news-box">
+      <p data-en>
+        🚧 Website launched. Telegram automation and MT4 consulting now available.
+      </p>
+      <p data-hr style="display:none;">
+        🚧 Web stranica je aktivna. Dostupno MT4 savjetovanje i Telegram automatizacija.
+      </p>
+    </div>
+  </section>
+
   <!-- HOW WE WORK -->
   <section class="how-we-work">
     <h2 data-en>How We Work</h2>
@@ -142,9 +155,20 @@
 <!-- FOOTER -->
 <footer id="contact">
   <p>© 2025 ArcOfLife AI</p>
+
   <p>
-    info@arcoflifeai.com · support@arcoflifeai.com
+    info@arcoflifeai.com · support@arcoflifeai.com · matija.farkas@arcoflifeai.com
   </p>
+
+  <!-- ETH ICON -->
+  <div class="eth">
+    <svg width="22" height="22" viewBox="0 0 256 417" fill="#8ab4f8">
+      <path d="M127.6 0L124.8 9.5v272.8l2.8 2.8 127.6-75.4z"/>
+      <path d="M127.6 0L0 209.7l127.6 75.4V0z"/>
+      <path d="M127.6 312.1l-1.6 2v100.7l1.6 4.7 127.7-180.2z"/>
+      <path d="M127.6 419.5V312.1L0 239.3z"/>
+    </svg>
+  </div>
 </footer>
 
 <!-- LANGUAGE SCRIPT -->
@@ -158,7 +182,6 @@
   enBtn.onclick = () => {
     enBtn.classList.add("active");
     hrBtn.classList.remove("active");
-
     enElements.forEach(el => el.style.display = "");
     hrElements.forEach(el => el.style.display = "none");
   };
@@ -166,7 +189,6 @@
   hrBtn.onclick = () => {
     hrBtn.classList.add("active");
     enBtn.classList.remove("active");
-
     hrElements.forEach(el => el.style.display = "");
     enElements.forEach(el => el.style.display = "none");
   };
