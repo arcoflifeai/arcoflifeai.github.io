@@ -4,8 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArcOfLife AI</title>
-  <meta name="description" content="ArcOfLife AI – Automation, Trading Systems & Telegram Bots. No hype. Only real tech.">
+
+  <meta name="description" content="ArcOfLife AI – Automation, Trading Systems & Telegram Bots. No hype. Only real automation." />
+
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* fallback ako se CSS ne učita */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #0b1c2d, #05070c);
+      color: #ffffff;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,67 +34,143 @@
   </div>
 </header>
 
-<section class="hero">
-  <h1
-    data-en="Automation. Trading Systems. Smart Infrastructure."
-    data-hr="Automatizacija. Trading sustavi. Pametna infrastruktura.">
-  </h1>
+<main>
 
-  <p
-    data-en="We build real automation. No hype. No fake promises."
-    data-hr="Gradimo stvarnu automatizaciju. Bez hypea. Bez lažnih obećanja.">
-  </p>
+  <!-- HERO -->
+  <section class="hero">
+    <h1 data-en>Automation. Trading Systems. Smart Infrastructure.</h1>
+    <h1 data-hr style="display:none;">
+      Automatizacija. Trgovinski sustavi. Pametna infrastruktura.
+    </h1>
 
-  <div class="cta">
-    <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">
-      Join Telegram
-    </a>
-    <a href="mailto:info@arcoflifeai.com" class="btn secondary">
-      Contact
-    </a>
-  </div>
-</section>
+    <p class="subtitle" data-en>
+      We build real automation.<br />
+      No hype. No fake promises.
+    </p>
 
-<section class="services">
-  <h2
-    data-en="Current Services"
-    data-hr="Trenutne usluge">
-  </h2>
+    <p class="subtitle" data-hr style="display:none;">
+      Radimo stvarnu automatizaciju.<br />
+      Bez hypea. Bez lažnih obećanja.
+    </p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>MT4 Consulting</h3>
-      <p
-        data-en="Strategy logic, risk management, EA structure review."
-        data-hr="Logika strategija, upravljanje rizikom i analiza EA strukture.">
-      </p>
+    <div class="buttons">
+      <a
+        href="https://t.me/+2FVym2a8Zpg5YTY0"
+        target="_blank"
+        class="btn primary"
+      >
+        Join Telegram
+      </a>
+
+      <a href="#contact" class="btn secondary">
+        Contact
+      </a>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Telegram Bots</h3>
-      <p
-        data-en="Custom Telegram bots for signals, automation and reporting."
-        data-hr="Custom Telegram botovi za signale, automatizaciju i izvještavanje.">
-      </p>
+  <!-- SERVICES -->
+  <section class="services">
+    <h2 data-en>Current Services</h2>
+    <h2 data-hr style="display:none;">Trenutne usluge</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3 data-en>MT4 Consulting</h3>
+        <h3 data-hr style="display:none;">MT4 Savjetovanje</h3>
+
+        <p data-en>
+          Strategy logic, risk management and EA architecture review.
+        </p>
+
+        <p data-hr style="display:none;">
+          Logika strategija, upravljanje rizikom i analiza EA strukture.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 data-en>Telegram Bots</h3>
+        <h3 data-hr style="display:none;">Telegram Botovi</h3>
+
+        <p data-en>
+          Custom Telegram bots for signals, automation and reporting.
+        </p>
+
+        <p data-hr style="display:none;">
+          Custom Telegram botovi za signale, automatizaciju i izvještaje.
+        </p>
+      </div>
+
+      <div class="card coming">
+        <h3 data-en>Coming Soon</h3>
+        <h3 data-hr style="display:none;">U pripremi</h3>
+
+        <p data-en>
+          Advanced automation systems and private infrastructure.
+        </p>
+
+        <p data-hr style="display:none;">
+          Napredni automatizirani sustavi i privatna infrastruktura.
+        </p>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card coming">
-      <h3>Coming Soon</h3>
-      <p
-        data-en="Advanced automation systems & private infrastructure."
-        data-hr="Napredni automatizirani sustavi i privatna infrastruktura.">
-      </p>
-    </div>
-  </div>
-</section>
+  <!-- HOW WE WORK -->
+  <section class="how-we-work">
+    <h2 data-en>How We Work</h2>
+    <h2 data-hr style="display:none;">Kako radimo</h2>
 
-<footer>
+    <ul data-en>
+      <li>No guaranteed profits</li>
+      <li>No copied or resold systems</li>
+      <li>Custom-built solutions only</li>
+      <li>Long-term, risk-aware mindset</li>
+    </ul>
+
+    <ul data-hr style="display:none;">
+      <li>Nema garantiranih profita</li>
+      <li>Nema kopiranih ili preprodavanih sustava</li>
+      <li>Isključivo custom rješenja</li>
+      <li>Dugoročni i odgovorni pristup</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact">
   <p>© 2025 ArcOfLife AI</p>
   <p>
     info@arcoflifeai.com · support@arcoflifeai.com
   </p>
 </footer>
 
-<script src="script.js"></script>
+<!-- LANGUAGE SCRIPT -->
+<script>
+  const enBtn = document.getElementById("enBtn");
+  const hrBtn = document.getElementById("hrBtn");
+
+  const enElements = document.querySelectorAll("[data-en]");
+  const hrElements = document.querySelectorAll("[data-hr]");
+
+  enBtn.onclick = () => {
+    enBtn.classList.add("active");
+    hrBtn.classList.remove("active");
+
+    enElements.forEach(el => el.style.display = "");
+    hrElements.forEach(el => el.style.display = "none");
+  };
+
+  hrBtn.onclick = () => {
+    hrBtn.classList.add("active");
+    enBtn.classList.remove("active");
+
+    hrElements.forEach(el => el.style.display = "");
+    enElements.forEach(el => el.style.display = "none");
+  };
+</script>
+
 </body>
 </html>
