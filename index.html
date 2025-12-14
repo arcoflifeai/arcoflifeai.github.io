@@ -1,40 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ArcOfLife AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f1a;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-    }
-    .box {
-      max-width: 600px;
-      padding: 40px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.1rem;
-      opacity: 0.85;
-    }
-  </style>
+  <meta name="description" content="ArcOfLife AI – Automation, Trading Systems & Telegram Bots. No hype. Only real tech.">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="box">
-    <h1>ArcOfLife AI</h1>
-    <p>Automation • Trading Systems • Smart Infrastructure</p>
-    <p>Official site – coming online.</p>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="ArcOfLife AI Logo" />
+    <span>ArcOfLife AI</span>
   </div>
+
+  <div class="lang-toggle">
+    <button id="enBtn" class="active">EN</button>
+    <button id="hrBtn">HR</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1
+    data-en="Automation. Trading Systems. Smart Infrastructure."
+    data-hr="Automatizacija. Trading sustavi. Pametna infrastruktura.">
+  </h1>
+
+  <p
+    data-en="We build real automation. No hype. No fake promises."
+    data-hr="Gradimo stvarnu automatizaciju. Bez hypea. Bez lažnih obećanja.">
+  </p>
+
+  <div class="cta">
+    <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="btn primary">
+      Join Telegram
+    </a>
+    <a href="mailto:info@arcoflifeai.com" class="btn secondary">
+      Contact
+    </a>
+  </div>
+</section>
+
+<section class="services">
+  <h2
+    data-en="Current Services"
+    data-hr="Trenutne usluge">
+  </h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>MT4 Consulting</h3>
+      <p
+        data-en="Strategy logic, risk management, EA structure review."
+        data-hr="Logika strategija, upravljanje rizikom i analiza EA strukture.">
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Telegram Bots</h3>
+      <p
+        data-en="Custom Telegram bots for signals, automation and reporting."
+        data-hr="Custom Telegram botovi za signale, automatizaciju i izvještavanje.">
+      </p>
+    </div>
+
+    <div class="card coming">
+      <h3>Coming Soon</h3>
+      <p
+        data-en="Advanced automation systems & private infrastructure."
+        data-hr="Napredni automatizirani sustavi i privatna infrastruktura.">
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 ArcOfLife AI</p>
+  <p>
+    info@arcoflifeai.com · support@arcoflifeai.com
+  </p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
