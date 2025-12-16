@@ -88,6 +88,7 @@
       padding:12px 16px;
       border-radius:14px;
       font-weight:800;
+      white-space:nowrap;
     }
 
     .primary{
@@ -96,6 +97,13 @@
 
     .ghost{
       border:1px solid var(--line);
+    }
+
+    /* ICONS */
+    .icon{
+      width:18px;
+      height:18px;
+      display:inline-block;
     }
 
     /* LIVE EXAMPLES */
@@ -116,6 +124,7 @@
       box-shadow:0 6px 20px rgba(0,0,0,.35);
     }
 
+    /* Telegram primjer – NAMJERNO MANJE */
     .telegram-example img{
       max-width:50%;
     }
@@ -130,6 +139,7 @@
       color:var(--muted);
     }
 
+    /* PAYMENTS */
     .pay-row{
       display:flex;
       align-items:center;
@@ -148,6 +158,14 @@
       font-size:12px;
     }
 
+    .disclaimer{
+      margin-top:16px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      font-size:13px;
+      color:var(--muted);
+    }
+
     footer{
       text-align:center;
       margin-top:50px;
@@ -157,12 +175,12 @@
 
     @media (max-width:900px){
       .examples{grid-template-columns:1fr}
+      .telegram-example img{max-width:70%}
     }
 
     @media (max-width:600px){
-      .telegram-example img{max-width:85%}
       nav{justify-content:center}
-      .panel .btn{width:100%;margin-top:10px}
+      .panel .btn{width:100%}
     }
   </style>
 </head>
@@ -188,8 +206,13 @@
   <p>MT4 tools, Telegram automation and Smart Contract development.</p>
 
   <a class="btn primary" href="#contact">Get started</a>
+
   <a class="btn ghost" href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank">
-    <img src="Telegram1.jpg" alt="" style="width:18px"> Join Telegram
+    <!-- TELEGRAM LOGO -->
+    <svg class="icon" viewBox="0 0 24 24" fill="#4aa3ff">
+      <path d="M9.993 15.523 9.8 19.16c.278 0 .398-.12.543-.264l1.303-1.253 2.702 1.98c.495.273.848.13.972-.458l1.76-8.26c.145-.67-.244-.93-.73-.747L3.82 13.9c-.65.255-.64.62-.11.784l3.19.996 7.403-4.673c.348-.21.666-.095.404.137"/>
+    </svg>
+    Join Telegram
   </a>
 </section>
 
@@ -198,18 +221,18 @@
   <div class="grid">
     <div class="card">
       <h3>MT4 Tools</h3>
-      <p>Custom Expert Advisors, risk management tools and account automation.</p>
-      <p>Built for real trading conditions, not demo-only nonsense.</p>
+      <p>Custom Expert Advisors, advanced risk management and full account automation.</p>
+      <p>Designed for real trading environments with stability, logging and protection layers.</p>
     </div>
     <div class="card">
       <h3>Telegram Automation</h3>
-      <p>Trading bots, alerts, reporting and affiliate funnels.</p>
-      <p>Fully automated delivery with user verification and logging.</p>
+      <p>Trading bots, alerts, reporting systems and affiliate funnels.</p>
+      <p>End-to-end automation with user verification, delivery control and analytics.</p>
     </div>
     <div class="card">
       <h3>Smart Contracts</h3>
-      <p>Solidity development, ERC20 tokens, payments and audits.</p>
-      <p>Deployment via Remix + MetaMask with clean, auditable code.</p>
+      <p>Solidity development, ERC20 tokens, payment logic and audits.</p>
+      <p>Deployment via Remix + MetaMask with clean, auditable production-ready code.</p>
     </div>
   </div>
 </section>
@@ -234,11 +257,20 @@
   <h2>Payment Methods</h2>
 
   <div class="card">
+
     <div class="pay-row">
+      <!-- PAYPAL ICON -->
+      <svg class="icon" viewBox="0 0 24 24" fill="#4aa3ff">
+        <path d="M7 21h3l1-6h3c3.3 0 5.8-2.2 6.4-5.2.7-3.6-1.5-6.8-5.2-6.8H6L4 21h3z"/>
+      </svg>
       <strong>PayPal:</strong> billing@arcoflifeai.com
     </div>
 
     <div class="pay-row">
+      <!-- ETH / METAMASK ICON -->
+      <svg class="icon" viewBox="0 0 256 417">
+        <path fill="#4aa3ff" d="M127.9 0L124 13.7v273.5l3.9 3.9 127.9-75.5z"/>
+      </svg>
       <strong>ETH (ERC20 / MetaMask):</strong>
       <span id="eth">0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E</span>
       <button onclick="navigator.clipboard.writeText(document.getElementById('eth').innerText)">Copy</button>
@@ -248,9 +280,10 @@
       <strong>USDT:</strong> Network on request
     </div>
 
-    <p style="color:var(--muted);font-size:13px;margin-top:12px">
-      Disclaimer: No guaranteed profits. All tools and contracts are delivered as-is for professional use.
-    </p>
+    <div class="disclaimer">
+      Disclaimer: No guaranteed profits. All tools and smart contracts are delivered as-is for professional use.
+    </div>
+
   </div>
 </section>
 
