@@ -183,6 +183,15 @@
       color: #8aa4c0;
       font-size: 14px;
     }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+      .subtitle {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -269,11 +278,10 @@
 
 <section class="contact" id="contact">
   <h2>Contact</h2>
-
-  <form id="contactForm">
-    <input type="text" id="name" placeholder="Your name" required>
-    <input type="email" id="email" placeholder="Your email" required>
-    <textarea id="message" rows="4" placeholder="Message" required></textarea>
+  <form>
+    <input type="text" placeholder="Your name">
+    <input type="email" placeholder="Your email">
+    <textarea rows="4" placeholder="Message"></textarea>
     <button type="submit">Send</button>
   </form>
 </section>
@@ -281,8 +289,8 @@
 <section class="disclaimer">
   <h2>Disclaimer</h2>
   <p>
-    All services provided are technical and educational.
-    Automation tools assist execution, while final responsibility remains with the user.
+    All services provided are technical and educational. Automation tools assist execution,
+    while final responsibility remains with the user.
   </p>
 </section>
 
@@ -294,66 +302,29 @@
 </footer>
 
 <script>
-function copyWallet() {
-  navigator.clipboard.writeText("0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E");
-  alert("Wallet address copied");
-}
+  function copyWallet() {
+    navigator.clipboard.writeText("0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E");
+    alert("Wallet address copied");
+  }
 
-// language toggle
-const enBtn = document.getElementById("enBtn");
-const hrBtn = document.getElementById("hrBtn");
-const enEls = document.querySelectorAll("[data-en]");
-const hrEls = document.querySelectorAll("[data-hr]");
+  const enBtn = document.getElementById("enBtn");
+  const hrBtn = document.getElementById("hrBtn");
+  const enEls = document.querySelectorAll("[data-en]");
+  const hrEls = document.querySelectorAll("[data-hr]");
 
-enBtn.onclick = () => {
-  enBtn.classList.add("active");
-  hrBtn.classList.remove("active");
-  enEls.forEach(e => e.style.display = "");
-  hrEls.forEach(e => e.style.display = "none");
-};
+  enBtn.onclick = () => {
+    enBtn.classList.add("active");
+    hrBtn.classList.remove("active");
+    enEls.forEach(e => e.style.display = "");
+    hrEls.forEach(e => e.style.display = "none");
+  };
 
-hrBtn.onclick = () => {
-  hrBtn.classList.add("active");
-  enBtn.classList.remove("active");
-  hrEls.forEach(e => e.style.display = "");
-  enEls.forEach(e => e.style.display = "none");
-};
-
-// CONTACT → TELEGRAM
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  const text =
-`📩 New message from ArcOfLifeAI.com
-
-👤 Name: ${name}
-📧 Email: ${email}
-
-📝 Message:
-${message}`;
-
-  fetch("https://api.telegram.org/bot8145919840:AAFH07gd_DpIixmKWuhdi_CDziaJJKFmlBQ/sendMessage", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: "7437099025",
-      text: text
-    })
-  })
-  .then(r => {
-    if (r.ok) {
-      alert("Message sent.");
-      document.getElementById("contactForm").reset();
-    } else {
-      alert("Telegram error.");
-    }
-  })
-  .catch(() => alert("Network error."));
-});
+  hrBtn.onclick = () => {
+    hrBtn.classList.add("active");
+    enBtn.classList.remove("active");
+    hrEls.forEach(e => e.style.display = "");
+    enEls.forEach(e => e.style.display = "none");
+  };
 </script>
 
 </body>
