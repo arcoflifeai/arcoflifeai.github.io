@@ -6,8 +6,6 @@
   <title>ArcOfLife AI — Bots, Automation & Smart Contracts</title>
   <meta name="description" content="ArcOfLife AI — MT4 tools, Telegram automation, and Smart Contract development." />
 
-  <link rel="stylesheet" href="style.css" />
-
   <style>
     :root{
       --bg:#0b0f14;
@@ -37,7 +35,6 @@
       padding:20px;
     }
 
-    /* HEADER */
     header{
       display:flex;
       justify-content:space-between;
@@ -83,7 +80,6 @@
       gap:16px;
     }
 
-    /* BUTTONS */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -92,7 +88,6 @@
       padding:12px 16px;
       border-radius:14px;
       font-weight:800;
-      width:auto;
     }
 
     .primary{
@@ -103,29 +98,7 @@
       border:1px solid var(--line);
     }
 
-    /* PAYMENT PILLS */
-    .pill{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      margin:8px 0;
-      word-break:break-all;
-    }
-
-    .copy-btn{
-      cursor:pointer;
-      border:none;
-      background:none;
-      color:var(--accent);
-      font-weight:800;
-      padding:6px 10px;
-    }
-
-    /* TELEGRAM + REMIX */
+    /* LIVE EXAMPLES */
     .examples{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -138,17 +111,24 @@
     }
 
     .example-box img{
-      max-width:100%;
       border-radius:16px;
       border:1px solid var(--line);
       box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+
+    /* 🔥 TELEGRAM IMAGE FIX */
+    .telegram-example img{
+      max-width:50%;
+    }
+
+    .remix-example img{
+      max-width:100%;
     }
 
     .example-box p{
       margin-top:12px;
       font-size:15px;
       color:var(--muted);
-      line-height:1.4;
     }
 
     footer{
@@ -158,43 +138,25 @@
       font-size:13px;
     }
 
-    /* ---------- MOBILE FIXES ---------- */
+    /* MOBILE */
     @media (max-width:900px){
       .examples{
         grid-template-columns:1fr;
-        gap:28px;
       }
     }
 
     @media (max-width:600px){
-      h1{font-size:24px}
-      h2{font-size:20px}
-
-      .panel{
-        text-align:center;
-      }
-
-      .panel .btn{
-        width:100%;
-        margin-top:10px;
+      .telegram-example img{
+        max-width:85%;
       }
 
       nav{
         justify-content:center;
       }
 
-      .example-box img{
-        max-width:92%;
-        margin:auto;
-      }
-
-      .example-box p{
-        font-size:14px;
-        padding:0 10px;
-      }
-
-      .pill{
-        border-radius:16px;
+      .panel .btn{
+        width:100%;
+        margin-top:10px;
       }
     }
   </style>
@@ -210,7 +172,7 @@
   </div>
   <nav>
     <a href="#services">Services</a>
-    <a href="#telegram">Telegram</a>
+    <a href="#examples">Examples</a>
     <a href="#payments">Payments</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -221,7 +183,7 @@
   <p>MT4 tools, Telegram automation and Smart Contract development.</p>
 
   <a class="btn primary" href="#contact">Get started</a>
-  <a class="btn ghost" href="#telegram">Join Telegram</a>
+  <a class="btn ghost" href="#examples">Join Telegram</a>
 </section>
 
 <section id="services">
@@ -242,16 +204,16 @@
   </div>
 </section>
 
-<section id="telegram">
+<section id="examples">
   <h2>Live Examples</h2>
 
   <div class="examples">
-    <div class="example-box">
+    <div class="example-box telegram-example">
       <img src="Telegram1.jpg" alt="Telegram MT4 account status">
       <p>Automated MT4 account status updates sent directly to Telegram.</p>
     </div>
 
-    <div class="example-box">
+    <div class="example-box remix-example">
       <img src="remix.png" alt="Remix Ethereum IDE">
       <p>Smart Contract development & deployment using Remix + MetaMask.</p>
     </div>
@@ -261,18 +223,12 @@
 <section id="payments">
   <h2>Payment Methods</h2>
 
-  <div class="pill">
-    PayPal — billing@arcoflifeai.com
-  </div>
-
-  <div class="pill">
-    ETH (ERC20 / MetaMask)
-    <span id="wallet">0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E</span>
-    <button class="copy-btn" onclick="copyWallet()">COPY</button>
-  </div>
-
-  <div class="pill">
-    USDT (Network on request)
+  <div class="card">
+    <p><strong>PayPal:</strong> billing@arcoflifeai.com</p>
+    <p><strong>ETH (ERC20 / MetaMask):</strong><br>
+      0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E
+    </p>
+    <p><strong>USDT:</strong> network on request</p>
   </div>
 </section>
 
@@ -286,21 +242,9 @@
 </section>
 
 <footer>
-  © <span id="year"></span> ArcOfLife AI. All rights reserved.
+  © 2025 ArcOfLife AI. All rights reserved.
 </footer>
 
 </div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function copyWallet(){
-    navigator.clipboard.writeText(
-      document.getElementById("wallet").innerText
-    );
-    alert("Wallet address copied");
-  }
-</script>
-
 </body>
 </html>
