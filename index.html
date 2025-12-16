@@ -10,27 +10,136 @@
 
   <style>
     :root{
-      --bg:#0b0f14; --card:#111826; --txt:#e7eef8; --muted:#a9b6c7;
-      --line:rgba(255,255,255,.08); --accent:#4aa3ff; --accent2:#7c5cff;
+      --bg:#0b0f14;
+      --card:#111826;
+      --txt:#e7eef8;
+      --muted:#a9b6c7;
+      --line:rgba(255,255,255,.08);
+      --accent:#4aa3ff;
+      --accent2:#7c5cff;
       --radius:16px;
     }
-    body{margin:0;font-family:system-ui;background:var(--bg);color:var(--txt);}
-    a{color:inherit}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+      background:var(--bg);
+      color:var(--txt);
+    }
+
+    a{color:inherit;text-decoration:none}
+
     .wrap{max-width:1100px;margin:auto;padding:24px}
-    header{display:flex;justify-content:space-between;align-items:center}
-    .brand{display:flex;gap:12px;align-items:center;text-decoration:none}
-    .brand img{width:38px;border-radius:10px}
-    nav a{margin-left:14px;font-weight:700;text-decoration:none}
-    section{margin-top:28px}
-    .panel,.card{background:#111826;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:14px;font-weight:800;text-decoration:none}
-    .primary{background:linear-gradient(135deg,var(--accent),var(--accent2))}
-    .ghost{border:1px solid var(--line)}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;border:1px solid var(--line)}
-    .copy-btn{cursor:pointer;border:none;background:none;color:var(--accent);font-weight:800}
-    .shot{max-width:420px;border-radius:18px;border:1px solid var(--line)}
-    footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .brand img{
+      width:38px;
+      border-radius:10px;
+    }
+
+    nav a{
+      margin-left:16px;
+      font-weight:700;
+    }
+
+    section{margin-top:36px}
+
+    .panel,.card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+    }
+
+    .primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+    }
+
+    .ghost{
+      border:1px solid var(--line);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      margin:6px 6px 0 0;
+    }
+
+    .copy-btn{
+      cursor:pointer;
+      border:none;
+      background:none;
+      color:var(--accent);
+      font-weight:800;
+    }
+
+    /* --- TELEGRAM + REMIX LAYOUT --- */
+    .examples{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      align-items:flex-start;
+    }
+
+    .example-box{
+      text-align:center;
+    }
+
+    .example-box img{
+      max-width:100%;
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+    }
+
+    .example-box p{
+      margin-top:10px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    @media (max-width:900px){
+      .examples{
+        grid-template-columns:1fr;
+      }
+    }
+
+    footer{
+      text-align:center;
+      margin-top:50px;
+      color:var(--muted);
+      font-size:13px;
+    }
   </style>
 </head>
 
@@ -38,10 +147,10 @@
 <div class="wrap">
 
 <header>
-  <a class="brand" href="./">
-    <img src="logo.png">
+  <div class="brand">
+    <img src="logo.png" alt="ArcOfLife AI">
     <strong>ArcOfLife AI</strong>
-  </a>
+  </div>
   <nav>
     <a href="#services">Services</a>
     <a href="#telegram">Telegram</a>
@@ -61,15 +170,38 @@
 <section id="services">
   <h2>Services</h2>
   <div class="grid">
-    <div class="card"><h3>MT4 Tools</h3><p>Custom EAs & utilities.</p></div>
-    <div class="card"><h3>Telegram Automation</h3><p>Bots, alerts & funnels.</p></div>
-    <div class="card"><h3>Smart Contracts</h3><p>Solidity dev, ERC20, payments, audits.</p></div>
+    <div class="card">
+      <h3>MT4 Tools</h3>
+      <p>Custom EAs & utilities.</p>
+    </div>
+    <div class="card">
+      <h3>Telegram Automation</h3>
+      <p>Bots, alerts & funnels.</p>
+    </div>
+    <div class="card">
+      <h3>Smart Contracts</h3>
+      <p>Solidity dev, ERC20, payments, audits.</p>
+    </div>
   </div>
 </section>
 
+<!-- TELEGRAM + REMIX EXAMPLES -->
 <section id="telegram">
-  <h2>Telegram Example</h2>
-  <img class="shot" src="Telegram1.jpg">
+  <h2>Live Examples</h2>
+
+  <div class="examples">
+
+    <div class="example-box">
+      <img src="Telegram1.jpg" alt="Telegram MT4 account status">
+      <p>Automated MT4 account status updates sent directly to Telegram.</p>
+    </div>
+
+    <div class="example-box">
+      <img src="remix.png" alt="Remix Ethereum IDE">
+      <p>Smart Contract development & deployment using Remix + MetaMask.</p>
+    </div>
+
+  </div>
 </section>
 
 <section id="payments">
@@ -102,17 +234,21 @@
 </section>
 
 <footer>
-  © <span id="y"></span> ArcOfLife AI. All rights reserved.
+  © <span id="year"></span> ArcOfLife AI. All rights reserved.
 </footer>
 
 </div>
 
 <script>
-  document.getElementById("y").textContent=new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+
   function copyWallet(){
-    navigator.clipboard.writeText(document.getElementById("wallet").innerText);
+    navigator.clipboard.writeText(
+      document.getElementById("wallet").innerText
+    );
     alert("Wallet address copied");
   }
 </script>
+
 </body>
 </html>
