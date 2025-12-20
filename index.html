@@ -3,45 +3,102 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ArcOfLife AI — Automation & Smart Contracts</title>
+  <title>ArcOfLife AI — Bots, Automation & Smart Contracts</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    :root{--bg:#0b0f14;--card:#111826;--txt:#e7eef8;--muted:#a9b6c7;--line:rgba(255,255,255,.08);--accent:#4aa3ff;--radius:16px;}
+    :root{ --bg:#0b0f14; --card:#111826; --txt:#e7eef8; --muted:#a9b6c7; --line:rgba(255,255,255,.08); --accent:#4aa3ff; --accent2:#7c5cff; --radius:16px; }
     *{box-sizing:border-box}
-    body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-text-size-adjust:100%;}
-    .wrap{max-width:1100px;margin:auto;padding:20px;width:100%;overflow-x:hidden;}
-    header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);}
-    section{margin-top:40px;}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
-    .btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:14px;font-weight:800;background:var(--accent);color:#fff;text-decoration:none;margin-top:10px;gap:8px;}
-    .pay-row{display:flex;align-items:center;gap:12px;margin-bottom:15px;padding:12px;background:rgba(255,255,255,0.03);border-radius:12px;flex-wrap:wrap;}
-    #eth{font-size:0.85rem;color:var(--accent);word-break:break-all;overflow-wrap:anywhere;}
-    @media(max-width:600px){.btn{width:100%;justify-content:center;}header{justify-content:center;}}
+    body{ margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; -webkit-text-size-adjust: 100%; }
+    a{color:inherit; text-decoration:none}
+    .wrap{ max-width:1100px; margin:auto; padding:20px; width: 100%; overflow-x: hidden; }
+    header{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+    .brand{ display:flex; gap:12px; align-items:center; }
+    .brand img{ width:36px; border-radius:10px; }
+    nav{ display:flex; gap:14px; flex-wrap: wrap; }
+    nav a{ font-weight:700; font-size:14px; opacity:0.8; transition:0.3s; }
+    nav a:hover{ opacity:1; color:var(--accent); }
+    section{ margin-top:48px; }
+    .panel, .card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:24px; width: 100%; }
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 20px; border-radius:14px; font-weight:800; transition:0.3s; margin-top:10px; }
+    .primary{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; }
+    .ghost{ border:1px solid var(--line); background:rgba(255,255,255,0.03); }
+    .service-link{ font-size:14px; font-weight:600; color:var(--accent); margin-top:15px; display:flex; align-items:center; gap:8px; }
+    .examples{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+    .example-box{ text-align:center; background:rgba(255,255,255,0.02); padding:20px; border-radius:var(--radius); border:1px solid var(--line); }
+    .example-box img{ border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); max-width:100%; height:250px; object-fit:contain; }
+    .pay-row{ display:flex; align-items:center; gap:15px; margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.03); border-radius:12px; flex-wrap: wrap; }
+    #eth{ font-size:0.85rem; color:var(--accent); word-break: break-all; overflow-wrap: anywhere; display: block; max-width: 100%; }
+    .copy-btn{ background:var(--accent); color:#000; border:none; padding:5px 12px; border-radius:8px; font-size:11px; font-weight:bold; cursor:pointer; }
+    footer{ text-align:center; margin-top:60px; padding:20px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); }
+    @media (max-width:800px){ .examples{ grid-template-columns:1fr; } .example-box img{ height:auto; } }
+    @media (max-width:600px){ .btn{ width: 100%; } header, nav { justify-content: center; } }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <strong>ArcOfLife AI</strong>
-      <nav style="display:flex;gap:15px;"><a href="#services" style="color:inherit;text-decoration:none;">Services</a><a href="#payments" style="color:inherit;text-decoration:none;">Payments</a></nav>
-    </header>
-    <section class="card">
-      <h1>Automation that ships.</h1>
-      <p>MT4 tools, Telegram automation and Smart Contract development.</p>
-      <a class="btn" href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank"><i class="fab fa-telegram"></i> Join Telegram</a>
-    </section>
-    <section id="payments">
-      <h2>Payment Methods</h2>
-      <div class="card">
-        <div class="pay-row"><i class="fab fa-paypal"></i> <strong>PayPal:</strong> billing@arcoflifeai.com</div>
-        <div class="pay-row">
-          <i class="fab fa-ethereum"></i> <strong>ETH (MetaMask):</strong>
-          <span id="eth">0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E</span>
-          <button style="padding:5px 10px;font-size:10px;cursor:pointer;background:var(--accent);color:#000;border:none;border-radius:6px;font-weight:bold;" onclick="navigator.clipboard.writeText('0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E')">COPY</button>
-        </div>
-      </div>
-    </section>
-    <footer style="text-align:center;margin-top:40px;color:var(--muted);font-size:12px;">© 2025 ArcOfLife AI. All rights reserved.</footer>
+<div class="wrap">
+<header>
+  <div class="brand"><img src="logo.png" alt="ArcOfLife AI"><strong>ArcOfLife AI</strong></div>
+  <nav><a href="#services">Services</a><a href="#examples">Examples</a><a href="#payments">Payments</a><a href="#contact">Contact</a></nav>
+</header>
+<section class="panel">
+  <h1>Automation that actually ships.</h1>
+  <p>MT4 tools, Telegram automation and Smart Contract development.</p>
+  <div style="display:flex; gap:15px; flex-wrap:wrap;">
+    <a class="btn primary" href="#contact">Get started</a>
+    <a class="btn ghost" href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank"><i class="fab fa-telegram"></i> Join Telegram</a>
   </div>
+</section>
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">
+      <i class="fas fa-chart-line" style="font-size:2rem; color:var(--accent); margin-bottom:15px;"></i>
+      <h3>MT4 Tools</h3>
+      <p>Custom Expert Advisors and advanced risk management.</p>
+      <a href="https://www.mql5.com" target="_blank" class="service-link"><i class="fas fa-code"></i> View on MQL5</a>
+    </div>
+    <div class="card">
+      <i class="fab fa-telegram-plane" style="font-size:2rem; color:var(--accent2); margin-bottom:15px;"></i>
+      <h3>Telegram Automation</h3>
+      <p>Reporting systems and trading bot funnels.</p>
+      <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="service-link"><i class="fab fa-telegram"></i> Our Telegram Channel</a>
+    </div>
+    <div class="card">
+      <i class="fas fa-file-contract" style="font-size:2rem; color:#627eea; margin-bottom:15px;"></i>
+      <h3>Smart Contracts</h3>
+      <p>Solidity development and ERC20 deployment.</p>
+      <a href="https://remix.ethereum.org" target="_blank" class="service-link"><i class="fas fa-external-link-alt"></i> Open Remix IDE</a>
+    </div>
+  </div>
+</section>
+<section id="examples">
+  <h2>Live Examples</h2>
+  <div class="examples">
+    <div class="example-box"><img src="Telegram1.jpg" alt="Telegram MT4"><p>MT4 status to Telegram</p></div>
+    <div class="example-box"><img src="remix.png" alt="Remix"><p>Smart Contract deployment</p></div>
+  </div>
+</section>
+<section id="payments">
+  <h2>Payment Methods</h2>
+  <div class="card">
+    <div class="pay-row"><i class="fab fa-paypal"></i> <strong>PayPal:</strong> billing@arcoflifeai.com</div>
+    <div class="pay-row">
+      <i class="fab fa-ethereum"></i> <strong>ETH (MetaMask):</strong>
+      <span id="eth">0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E</span>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText('0xf1FB10aeb4CbdFCe983E4EfFa5d1CD8F16AF1D9E')">COPY</button>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card grid">
+    <div><i class="fas fa-envelope"></i> info@arcoflifeai.com</div>
+    <div><i class="fas fa-headset"></i> support@arcoflifeai.com</div>
+    <div><i class="fas fa-user-tie"></i> matija.farkas@arcoflifeai.com</div>
+  </div>
+</section>
+<footer>© 2025 ArcOfLife AI. All rights reserved.</footer>
+</div>
 </body>
 </html>
