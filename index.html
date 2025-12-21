@@ -9,7 +9,7 @@
   <style>
     :root{ --bg:#0b0f14; --card:#111826; --txt:#e7eef8; --muted:#a9b6c7; --line:rgba(255,255,255,.08); --accent:#4aa3ff; --accent2:#7c5cff; --radius:16px; }
     *{box-sizing:border-box}
-    body{ margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; -webkit-text-size-adjust: 100%; }
+    body{ margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     a{color:inherit; text-decoration:none}
     .wrap{ max-width:1100px; margin:auto; padding:20px; width: 100%; overflow-x: hidden; }
     header{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom:20px; border-bottom:1px solid var(--line); }
@@ -21,17 +21,25 @@
     section{ margin-top:48px; }
     .panel, .card{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:24px; width: 100%; }
     .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 20px; border-radius:14px; font-weight:800; transition:0.3s; margin-top:10px; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 20px; border-radius:14px; font-weight:800; transition:0.3s; margin-top:10px; cursor: pointer; }
     .primary{ background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; }
     .ghost{ border:1px solid var(--line); background:rgba(255,255,255,0.03); }
     .service-link{ font-size:14px; font-weight:600; color:var(--accent); margin-top:15px; display:flex; align-items:center; gap:8px; }
+    
+    /* RESULTS SECTION STYLE */
+    .results-container { text-align: center; margin-top: 20px; }
+    .graph-img { width: 100%; max-width: 900px; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(74, 163, 255, 0.1); margin-bottom: 25px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+    .stat-box { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid var(--line); }
+    .stat-val { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+    .contact-mini { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: flex; flex-direction: column; gap: 5px; align-items: center; }
+
     .examples{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
     .example-box{ text-align:center; background:rgba(255,255,255,0.02); padding:20px; border-radius:var(--radius); border:1px solid var(--line); }
     .example-box img{ border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); max-width:100%; height:375px; object-fit:contain; }
     .pay-row{ display:flex; align-items:center; gap:15px; margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.03); border-radius:12px; flex-wrap: wrap; }
     #eth{ font-size:0.85rem; color:var(--accent); word-break: break-all; overflow-wrap: anywhere; display: block; max-width: 100%; }
     .copy-btn{ background:var(--accent); color:#000; border:none; padding:5px 12px; border-radius:8px; font-size:11px; font-weight:bold; cursor:pointer; }
-    /* DISCLAIMER STYLE */
     .disclaimer { margin-top: 60px; padding: 20px; border-top: 1px solid var(--line); font-size: 0.75rem; color: var(--muted); text-align: center; opacity: 0.7; }
     footer{ text-align:center; margin-top:20px; padding:20px; color:var(--muted); font-size:13px; }
     @media (max-width:800px){ .examples{ grid-template-columns:1fr; } .example-box img{ height:auto; } }
@@ -42,16 +50,24 @@
 <div class="wrap">
 <header>
   <div class="brand"><img src="logo.png" alt="ArcOfLife AI"><strong>ArcOfLife AI</strong></div>
-  <nav><a href="#services">Services</a><a href="#examples">Examples</a><a href="#payments">Payments</a><a href="#contact">Contact</a></nav>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#results" style="color:var(--accent);">Results</a>
+    <a href="#examples">Examples</a>
+    <a href="#payments">Payments</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
+
 <section class="panel">
   <h1>Automation that actually ships.</h1>
   <p>MT4 tools, Telegram automation and Smart Contract development.</p>
   <div style="display:flex; gap:15px; flex-wrap:wrap;">
-    <a class="btn primary" href="#contact">Get started</a>
+    <a class="btn primary" href="#results">View Live Results</a>
     <a class="btn ghost" href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank"><i class="fab fa-telegram"></i> Join Telegram</a>
   </div>
 </section>
+
 <section id="services">
   <h2>Services</h2>
   <div class="grid">
@@ -59,7 +75,7 @@
       <i class="fas fa-chart-line" style="font-size:2rem; color:var(--accent); margin-bottom:15px;"></i>
       <h3>MT4 Tools</h3>
       <p>Custom Expert Advisors and advanced risk management.</p>
-      <a href="https://www.mql5.com" target="_blank" class="service-link"><i class="fas fa-code"></i> View on MQL5</a>
+      <a href="#results" class="service-link"><i class="fas fa-chart-area"></i> See Performance Graph</a>
     </div>
     <div class="card">
       <i class="fab fa-telegram-plane" style="font-size:2rem; color:var(--accent2); margin-bottom:15px;"></i>
@@ -75,6 +91,45 @@
     </div>
   </div>
 </section>
+
+<section id="results" class="panel" style="border-color: var(--accent);">
+  <h2 style="text-align:center; margin-bottom:10px;">Verified Live Performance</h2>
+  <p style="text-align:center; color:var(--muted); margin-bottom:30px;">XAUUSD M1 Scalping Strategy • Real-time Market Data</p>
+  
+  <div class="results-container">
+    <img src="Graf.png" alt="XAUUSD M1 Strategy Graph" class="graph-img">
+    
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-val">90.3%</div>
+        <div>Win Rate</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">2.13</div>
+        <div>Profit Factor</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">M1</div>
+        <div>Timeframe</div>
+      </div>
+    </div>
+
+    <div style="max-width: 800px; margin: auto; text-align: left; color: var(--muted);">
+      <p><strong>Years of Optimization:</strong> With over a decade of experience in Forex markets, we have developed algorithms that adapt to volatility. This <strong>XAUUSD M1</strong> strategy is designed for aggressive growth with strict risk management.</p>
+      <p>Our bots don't just backtest well; they perform in live market conditions. The graph above demonstrates our proprietary logic handling market noise and delivering consistent equity growth.</p>
+    </div>
+
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line);">
+      <h3>Interested in this strategy?</h3>
+      <div class="contact-mini">
+        <span><i class="fas fa-envelope"></i> info@arcoflifeai.com</span>
+        <span><i class="fas fa-headset"></i> support@arcoflifeai.com</span>
+        <span><i class="fas fa-user-tie"></i> matija.farkas@arcoflifeai.com</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="examples">
   <h2>Live Examples</h2>
   <div class="examples">
@@ -82,6 +137,7 @@
     <div class="example-box"><img src="remix.png" alt="Remix"><p>Smart Contract deployment</p></div>
   </div>
 </section>
+
 <section id="payments">
   <h2>Payment Methods</h2>
   <div class="card">
@@ -93,6 +149,7 @@
     </div>
   </div>
 </section>
+
 <section id="contact">
   <h2>Contact</h2>
   <div class="card grid">
@@ -105,6 +162,7 @@
 <div class="disclaimer">
   <strong>Risk Disclaimer:</strong> Trading Forex, Commodities, and Cryptocurrencies involves a high level of risk and may not be suitable for all investors. Past performance is not indicative of future results. The content provided on this website is for educational and informational purposes only and should not be construed as financial advice. ArcOfLife AI does not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information.
 </div>
+
 <footer>© 2025 ArcOfLife AI. All rights reserved.</footer>
 </div>
 </body>
