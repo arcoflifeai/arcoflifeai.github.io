@@ -25,7 +25,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    :root{ --bg:#0b0f14; --card:#111826; --txt:#e7eef8; --muted:#a9b6c7; --line:rgba(255,255,255,.08); --accent:#4aa3ff; --accent2:#7c5cff; --fiverr:#1dbf73; --radius:16px; }
+    :root{ --bg:#0b0f14; --card:#111826; --txt:#e7eef8; --muted:#a9b6c7; --line:rgba(255,255,255,.08); --accent:#4aa3ff; --accent2:#7c5cff; --radius:16px; }
     *{box-sizing:border-box}
     body{ margin:0; font-family:system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--txt); line-height:1.6; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     a{color:inherit; text-decoration:none}
@@ -53,14 +53,8 @@
     .contact-mini { font-size: 0.9rem; color: var(--muted); margin-top: 10px; display: flex; flex-direction: column; gap: 5px; align-items: center; }
 
     .examples{ display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
-    .example-box{ text-align:center; background:rgba(255,255,255,0.02); padding:20px; border-radius:var(--radius); border:1px solid var(--line); transition: transform 0.2s; }
-    .example-box:hover { border-color: var(--line); background:rgba(255,255,255,0.04); }
-    
+    .example-box{ text-align:center; background:rgba(255,255,255,0.02); padding:20px; border-radius:var(--radius); border:1px solid var(--line); }
     .example-box img{ border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.5); max-width:100%; height:375px; object-fit:contain; }
-    
-    /* Specific style for Fiverr image zoom */
-    .fiverr-zoom { transform: scale(1.1); margin: 10px 0; border: 1px solid var(--line); }
-
     .pay-row{ display:flex; align-items:center; gap:15px; margin-bottom:15px; padding:10px; background:rgba(255,255,255,0.03); border-radius:12px; flex-wrap: wrap; }
     #eth{ font-size:0.85rem; color:var(--accent); word-break: break-all; overflow-wrap: anywhere; display: block; max-width: 100%; }
     .copy-btn{ background:var(--accent); color:#000; border:none; padding:5px 12px; border-radius:8px; font-size:11px; font-weight:bold; cursor:pointer; }
@@ -109,14 +103,11 @@
       <p>Reporting systems and trading bot funnels.</p>
       <a href="https://t.me/+2FVym2a8Zpg5YTY0" target="_blank" class="service-link"><i class="fab fa-telegram"></i> Our Telegram Channel</a>
     </div>
-    
     <div class="card">
       <i class="fas fa-file-contract" style="font-size:2rem; color:#627eea; margin-bottom:15px;"></i>
       <h3>Smart Contracts</h3>
       <p>Solidity development and ERC20 deployment.</p>
-      <a href="https://www.fiverr.com/arcoflifeai/develop-secure-smart-contracts" target="_blank" class="service-link" style="color:var(--fiverr);">
-        <i class="fas fa-check-circle"></i> Order on Fiverr
-      </a>
+      <a href="https://remix.ethereum.org" target="_blank" class="service-link"><i class="fas fa-external-link-alt"></i> Open Remix IDE</a>
     </div>
   </div>
 </section>
@@ -162,22 +153,8 @@
 <section id="examples">
   <h2>Live Examples</h2>
   <div class="examples">
-    
-    <div class="example-box">
-      <img src="Telegram1.jpg" alt="Telegram MT4">
-      <p>MT4 status to Telegram</p>
-    </div>
-    
-    <div class="example-box">
-      <a href="https://www.fiverr.com/arcoflifeai/develop-secure-smart-contracts" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-        <img src="remix.png" alt="Fiverr Smart Contract Gig" class="fiverr-zoom">
-        <p style="font-weight:bold; margin-top:10px;">Smart Contract developments & audits</p>
-        <span style="color:var(--fiverr); font-weight:bold; font-size:0.9rem; display:inline-flex; align-items:center; gap:5px;">
-           <i class="fas fa-check-circle"></i> Order on Fiverr
-        </span>
-      </a>
-    </div>
-
+    <div class="example-box"><img src="Telegram1.jpg" alt="Telegram MT4"><p>MT4 status to Telegram</p></div>
+    <div class="example-box"><img src="remix.png" alt="Remix"><p>Smart Contract deployment</p></div>
   </div>
 </section>
 
@@ -209,5 +186,4 @@
 <footer>© 2025 ArcOfLife AI. All rights reserved.</footer>
 </div>
 </body>
-</html> 
- 
+</html>
